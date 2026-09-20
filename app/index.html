@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postulación a Vacante</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <header class="header">
+            <span class="company-name">Innovación Verde S.A.</span>
+            <span class="vacancy-badge">ID: VAC-2026-042</span>
+        </header>
+
+        <main class="content">
+            <h1 class="job-title">Desarrollador Python Backend</h1>
+
+            <section class="description">
+                <h3>Descripción de la vacante</h3>
+                <p>
+                    Buscamos un profesional para diseñar y optimizar servicios API en Python con FastAPI.
+                    Serás parte del equipo de desarrollo encargándote de la lógica de negocio y conectividad de bases de
+                    datos.
+                </p>
+            </section>
+
+            <form id="applyForm" class="upload-form">
+                <!-- ID de la vacante -->
+                <input type="hidden" id="vacancyId" name="vacancy_id" value="VAC-2026-042">
+
+                <!-- Carga de CV -->
+                <div class="file-upload-area">
+                    <label for="cvFile" class="file-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span id="fileName">Haz clic para seleccionar tu CV (PDF o DOCX)</span>
+                    </label>
+                    <input type="file" id="cvFile" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar datos</button>
+            </form>
+
+            <div id="responseMessage" class="message hidden"></div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

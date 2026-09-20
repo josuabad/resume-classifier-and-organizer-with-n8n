@@ -1,0 +1,232 @@
+:root {
+  /* Paleta de colores elegante y moderna */
+  --green-primary: #15803d;
+  --green-hover: #166534;
+  --green-soft: #f0fdf4;
+  --green-subtle: #dcfce7;
+  --green-border: #bbf7d0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.025);
+  --shadow-lg:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tarjeta Principal */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* Encabezado */
+.header {
+  background-color: var(--green-soft);
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--green-border);
+}
+
+.company-name {
+  font-weight: 700;
+  color: var(--green-primary);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vacancy-badge {
+  background-color: rgba(21, 128, 61, 0.1);
+  color: var(--green-primary);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  border: 1px solid var(--green-border);
+}
+
+/* Contenido Principal */
+.content {
+  padding: 32px 28px;
+}
+
+.job-title {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.025em;
+}
+
+.description h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--green-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.description p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* Formulario y Zona de Carga */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.file-upload-area {
+  position: relative;
+  border: 2px dashed var(--green-border);
+  background-color: var(--green-soft);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.file-upload-area:hover {
+  border-color: var(--green-primary);
+  background-color: var(--green-subtle);
+  transform: translateY(-1px);
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--green-primary);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.file-label svg {
+  stroke: var(--green-primary);
+  transition: var(--transition);
+}
+
+.file-upload-area:hover .file-label svg {
+  transform: translateY(-2px);
+}
+
+.file-upload-area input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Botón de envío */
+.btn-submit {
+  background-color: var(--green-primary);
+  color: #ffffff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-submit:hover {
+  background-color: var(--green-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Mensajes de respuesta */
+.message {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.message.success {
+  background-color: var(--green-soft);
+  color: var(--green-primary);
+  border: 1px solid var(--green-border);
+}
+
+.message.error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animación sutil */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
