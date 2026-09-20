@@ -17,3 +17,13 @@ docker compose down
 ```bash
 docker compose down -v
 ```
+
+**Requirements:**
+
+```bash
+pip install --upgrade pip && pip install fastapi uvicorn python-multipart httpx pypdf transformers torch jupyterlab && pip install --upgrade jupyter
+```
+
+```bash
+uvicorn main:app --reload
+```
