@@ -1,0 +1,20 @@
+services:
+  python-app:
+    image: python:3.12-slim
+    # container_name: ...
+    working_dir: /app
+    volumes:
+      - .:/app
+      - pip_cache:/usr/local/lib/python3.12/site-packages
+    command: ["tail", "-f", "/dev/null"]
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "6.0"
+    #       memory: 12G
+    ports:
+      - "8000:8000"
+
+volumes:
+  pip_cache:
+    driver: local

@@ -10,7 +10,7 @@ app.mount("/static", StaticFiles(directory="."), name="static")
 
 # URL del Webhook de n8n
 N8N_WEBHOOK_URL = (
-    "http://http://192.168.1.38:5678/webhook-test/a80b5f9a-3b41-44f7-a6d3-153c3082c3a6"
+    "http://192.168.1.38:5678/webhook-test/4ec84e98-ed40-4959-bbfb-b7ef2bd51950"
 )
 
 
@@ -51,3 +51,9 @@ async def postular(vacancy_id: str = Form(...), cv: UploadFile = File(...)):
         "filename": cv.filename,
         "n8n_response": n8n_result,
     }
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
